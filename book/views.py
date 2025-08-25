@@ -1,5 +1,3 @@
-from rest_framework.response import Response
-from rest_framework import status
 from book.models import Book, Category
 from book.serializers import BookSerializer, CategorySerializer
 from django.db.models import Count
