@@ -1,0 +1,122 @@
+[
+    {
+        "model": "users.author",
+        "pk": 1,
+        "fields": {
+            "name": "Harper Lee",
+            "biography": "American novelist widely known for To Kill a Mockingbird."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 2,
+        "fields": {
+            "name": "George Orwell",
+            "biography": "English novelist and essayist, famous for 1984 and Animal Farm."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 3,
+        "fields": {
+            "name": "Stephen Hawking",
+            "biography": "Renowned theoretical physicist and author of A Brief History of Time."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 4,
+        "fields": {
+            "name": "Yuval Noah Harari",
+            "biography": "Israeli historian and author of Sapiens: A Brief History of Humankind."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 5,
+        "fields": {
+            "name": "Anne Frank",
+            "biography": "Jewish diarist who wrote The Diary of a Young Girl during World War II."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 6,
+        "fields": {
+            "name": "Nelson Mandela",
+            "biography": "Anti-apartheid revolutionary and former President of South Africa."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 7,
+        "fields": {
+            "name": "Stephen R. Covey",
+            "biography": "Author of The 7 Habits of Highly Effective People."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 8,
+        "fields": {
+            "name": "Jane Austen",
+            "biography": "English novelist known for Pride and Prejudice and Sense and Sensibility."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 9,
+        "fields": {
+            "name": "Richard Dawkins",
+            "biography": "British evolutionary biologist and author of The Selfish Gene."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 10,
+        "fields": {
+            "name": "Jared Diamond",
+            "biography": "American geographer and author of Guns, Germs, and Steel."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 11,
+        "fields": {
+            "name": "Walter Isaacson",
+            "biography": "American writer, journalist, and biographer of Steve Jobs."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 12,
+        "fields": {
+            "name": "Dale Carnegie",
+            "biography": "American writer and lecturer, author of How to Win Friends and Influence People."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 13,
+        "fields": {
+            "name": "F. Scott Fitzgerald",
+            "biography": "American novelist, widely known for The Great Gatsby."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 14,
+        "fields": {
+            "name": "Charles Darwin",
+            "biography": "English naturalist and geologist, author of The Origin of Species."
+        }
+    },
+    {
+        "model": "users.author",
+        "pk": 15,
+        "fields": {
+            "name": "David McCullough",
+            "biography": "American author and historian, wrote The Wright Brothers."
+        }
+    }
+]

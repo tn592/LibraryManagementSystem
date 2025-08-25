@@ -1,0 +1,222 @@
+[
+    {
+        "model": "book.category",
+        "pk": 1,
+        "fields": {
+            "name": "Fiction",
+            "description": "Novels and literary works"
+        }
+    },
+    {
+        "model": "book.category",
+        "pk": 2,
+        "fields": {
+            "name": "Science",
+            "description": "Scientific and educational books"
+        }
+    },
+    {
+        "model": "book.category",
+        "pk": 3,
+        "fields": {
+            "name": "History",
+            "description": "Books about history and past events"
+        }
+    },
+    {
+        "model": "book.category",
+        "pk": 4,
+        "fields": {
+            "name": "Biography",
+            "description": "Life stories of famous people"
+        }
+    },
+    {
+        "model": "book.category",
+        "pk": 5,
+        "fields": {
+            "name": "Self-Help",
+            "description": "Guides and motivational books"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 1,
+        "fields": {
+            "title": "To Kill a Mockingbird",
+            "author": 1,
+            "isbn": "9780061120084",
+            "category": 1,
+            "created_at": "2025-02-05T10:30:00",
+            "updated_at": "2025-02-10T12:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 2,
+        "fields": {
+            "title": "1984",
+            "author": 2,
+            "isbn": "9780451524935",
+            "category": 1,
+            "created_at": "2025-01-28T09:15:00",
+            "updated_at": "2025-02-02T14:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 3,
+        "fields": {
+            "title": "A Brief History of Time",
+            "author": 3,
+            "isbn": "9780553380163",
+            "category": 2,
+            "created_at": "2025-02-01T14:45:00",
+            "updated_at": "2025-02-06T09:30:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 4,
+        "fields": {
+            "title": "Sapiens: A Brief History of Humankind",
+            "author": 4,
+            "isbn": "9780062316097",
+            "category": 2,
+            "created_at": "2025-02-12T17:00:00",
+            "updated_at": "2025-02-15T20:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 5,
+        "fields": {
+            "title": "The Diary of a Young Girl",
+            "author": 5,
+            "isbn": "9780553296983",
+            "category": 3,
+            "created_at": "2025-02-08T11:10:00",
+            "updated_at": "2025-02-09T11:45:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 6,
+        "fields": {
+            "title": "Long Walk to Freedom",
+            "author": 6,
+            "isbn": "9780316548182",
+            "category": 4,
+            "created_at": "2025-01-24T20:45:00",
+            "updated_at": "2025-01-28T20:45:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 7,
+        "fields": {
+            "title": "The 7 Habits of Highly Effective People",
+            "author": 7,
+            "isbn": "9780743269513",
+            "category": 5,
+            "created_at": "2025-02-03T12:00:00",
+            "updated_at": "2025-02-07T16:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 8,
+        "fields": {
+            "title": "Pride and Prejudice",
+            "author": 8,
+            "isbn": "9780141439518",
+            "category": 1,
+            "created_at": "2025-02-02T10:00:00",
+            "updated_at": "2025-02-05T12:30:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 9,
+        "fields": {
+            "title": "The Selfish Gene",
+            "author": 9,
+            "isbn": "9780198788607",
+            "category": 2,
+            "created_at": "2025-02-07T09:00:00",
+            "updated_at": "2025-02-10T11:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 10,
+        "fields": {
+            "title": "Guns, Germs, and Steel",
+            "author": 10,
+            "isbn": "9780393354324",
+            "category": 3,
+            "created_at": "2025-02-06T15:00:00",
+            "updated_at": "2025-02-08T16:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 11,
+        "fields": {
+            "title": "Steve Jobs",
+            "author": 11,
+            "isbn": "9781451648539",
+            "category": 4,
+            "created_at": "2025-02-04T10:30:00",
+            "updated_at": "2025-02-06T11:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 12,
+        "fields": {
+            "title": "How to Win Friends and Influence People",
+            "author": 12,
+            "isbn": "9780671027032",
+            "category": 5,
+            "created_at": "2025-02-08T12:00:00",
+            "updated_at": "2025-02-12T14:00:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 13,
+        "fields": {
+            "title": "The Great Gatsby",
+            "author": 13,
+            "isbn": "9780743273565",
+            "category": 1,
+            "created_at": "2025-01-30T09:00:00",
+            "updated_at": "2025-02-02T10:30:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 14,
+        "fields": {
+            "title": "The Origin of Species",
+            "author": 14,
+            "isbn": "9781509827695",
+            "category": 2,
+            "created_at": "2025-02-05T08:00:00",
+            "updated_at": "2025-02-07T09:30:00"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": 15,
+        "fields": {
+            "title": "The Wright Brothers",
+            "author": 15,
+            "isbn": "9781476728742",
+            "category": 4,
+            "created_at": "2025-02-01T11:00:00",
+            "updated_at": "2025-02-03T12:30:00"
+        }
+    }
+]
