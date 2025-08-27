@@ -1,59 +1,69 @@
 from rest_framework import serializers
 from borrow_record.models import BorrowRecord
 from book.models import Book
+from users.models import User
+
+
+class EmptySerializer(serializers.Serializer):
+    pass
 
 
 class SimpleBookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ["id", "title", "status"]
+        fields = ["id", "title", "isbn", "status"]
 
 
-class AddBorrowRecordSerializer(serializers.ModelSerializer):
+class SimpleUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "first_name", "last_name", "email"]
+
+
+class CreateBorrowRecordSerializer(serializers.Serializer):
     book_id = serializers.IntegerField()
 
-    class Meta:
-        model = BorrowRecord
-        fields = ["id", "book_id", "borrow_date", "return_date"]
-
-    def save(self, **kwargs):
-        user_id = self.context["user_id"]
-        book_id = self.validated_data["book_id"]
-
+    def validate_book_id(self, book_id):
         try:
-            borrow_record = BorrowRecord.objects.get(user_id=user_id, book_id=book_id)
-        except BorrowRecord.DoesNotExist:
-            self.instance = BorrowRecord.objects.create(
-                user_id=user_id, book_id=book_id, **self.validated_data
-            )
             book = Book.objects.get(pk=book_id)
-            book.status = "borrowed"
-            book.save()
+        except Book.DoesNotExist:
+            raise serializers.ValidationError("Book not found.")
 
-        return self.instance
+        if book.status != "available":
+            raise serializers.ValidationError("Book is not available for borrowing.")
+        user = self.context["user"]
+        if BorrowRecord.objects.filter(user=user, book=book).exists():
+            raise serializers.ValidationError(
+                "already borrowed this book and not returned yet"
+            )
 
-    def validate_book_id(self, value):
-        if not Book.objects.filter(pk=value).exists():
-            raise serializers.ValidationError(f"Book with id {value} does not exist")
-        return value
+        return book_id
+
+    def create(self, validated_data):
+        user = self.context["user"]
+        book = Book.objects.get(pk=validated_data["book_id"])
+        book.status = "borrowed"
+        book.save()
+
+        borrow_record = BorrowRecord.objects.create(user=user, book=book)
+        return borrow_record
+
+    def to_representation(self, instance):
+        return BorrowRecordSerializer(instance).data
 
 
 class UpdateBorrowRecordSerializer(serializers.ModelSerializer):
+    return_date = serializers.DateField(read_only=True)
+
     class Meta:
         model = BorrowRecord
         fields = ["return_date"]
 
-    def save(self, **kwargs):
-        borrow_record = super().save(**kwargs)
-        if borrow_record.return_date:
-            borrow_record.book.status = "available"
-            borrow_record.book.save()
-        return borrow_record
-
 
 class BorrowRecordSerializer(serializers.ModelSerializer):
+    user = SimpleUserSerializer()
     book = SimpleBookSerializer()
 
     class Meta:
         model = BorrowRecord
-        fields = ["id", "book", "borrow_date", "return_date"]
+        fields = ["id", "user", "book", "borrow_date", "return_date"]

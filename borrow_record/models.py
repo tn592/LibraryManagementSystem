@@ -1,10 +1,12 @@
 from django.db import models
 from book.models import Book
 from users.models import User
+from uuid import uuid4
 
 
 # Create your models here.
 class BorrowRecord(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="borrow_records"
     )
